@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") -%>
+<main class="room-main">
+  <div class="chats">
+    <% room.chats.forEach((chat) => { %>
+    <div class="chat">
+      <p><%= chat.chat %></p>
+      <small><%= chat.date %></small>
+    </div>
+    <% }); %>
+  </div>
+  <form class="room-form" action="/<%= room.room %>" method="POST">
+    <input
+      class="room-input"
+      type="text"
+      name="message"
+      placeholder="Type a message"
+    />
+    <button class="room-btn" type="submit">Send</button>
+  </form>
+</main>
+<%- include("partials/footer.ejs") -%>
